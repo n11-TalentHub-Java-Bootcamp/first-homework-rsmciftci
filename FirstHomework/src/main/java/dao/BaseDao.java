@@ -1,0 +1,20 @@
+package dao;
+import hibernate.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class BaseDao {
+    protected SessionFactory sessionFactory;
+    public BaseDao(){
+        sessionFactory = HibernateUtil.getSessionFactory();
+    }
+    protected Session getCurrentSession(){
+        Session session = sessionFactory.openSession();
+        return session;
+    }
+}
+
+
+
+
+
